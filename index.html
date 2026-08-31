@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smitha Beauty Salon — Ladies Beauty Salon, Bejai, Mangaluru</title>
+<meta name="description" content="Smitha Beauty Salon, Bejai, Mangaluru — hair, facials, nail care and bridal/party makeup. Open 9:30am–7pm, Sunday 10am–6pm.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#FBF3EC;
+    --paper:#FFFCF8;
+    --ink:#2B1810;
+    --ink-soft:#5C4436;
+    --wine:#6B1930;
+    --wine-deep:#4A1224;
+    --gold:#B8862E;
+    --gold-soft:#D8B876;
+    --sage:#445939;
+    --blush:#F1D4CE;
+    --line: rgba(43,24,16,0.12);
+    --shadow: 0 20px 40px -20px rgba(74,18,36,0.25);
+    --radius: 18px;
+    --container: 1180px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--ivory);
+    color:var(--ink);
+    font-family:'Manrope', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3,.display{
+    font-family:'Fraunces', serif;
+    color:var(--wine-deep);
+    margin:0;
+    font-weight:600;
+    letter-spacing:-0.01em;
+  }
+
+  a{color:inherit; text-decoration:none;}
+  img,svg{display:block; max-width:100%;}
+  button{font-family:inherit;}
+
+  .container{
+    max-width:var(--container);
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  .eyebrow{
+    font-family:'Manrope', sans-serif;
+    font-weight:700;
+    font-size:0.76rem;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--gold);
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:26px;
+    height:1.5px;
+    background:var(--gold);
+    display:inline-block;
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    padding:14px 26px;
+    border-radius:100px;
+    font-weight:700;
+    font-size:0.92rem;
+    border:1.5px solid transparent;
+    cursor:pointer;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
+    white-space:nowrap;
+  }
+  .btn:focus-visible{ outline:3px solid var(--gold-soft); outline-offset:3px; }
+  .btn-primary{ background:var(--wine); color:var(--paper); }
+  .btn-primary:hover{ background:var(--wine-deep); transform:translateY(-2px); box-shadow:var(--shadow); }
+  .btn-ghost{ background:transparent; border-color:var(--wine); color:var(--wine-deep); }
+  .btn-ghost:hover{ background:var(--wine); color:var(--paper); transform:translateY(-2px); }
+  .btn-gold{ background:var(--gold); color:var(--paper); }
+  .btn-gold:hover{ background:#9a6f22; transform:translateY(-2px); }
+  .btn-sm{ padding:10px 18px; font-size:0.82rem; }
+
+  /* ---------- Nav ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(251,243,236,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 28px;
+    max-width:var(--container);
+    margin:0 auto;
+  }
+  .brand{ display:flex; align-items:center; gap:12px; }
+  .brand-logo{ height:42px; width:auto; flex-shrink:0; }
+  .brand-text{ display:flex; flex-direction:column; line-height:1.15; }
+  .brand-name{ font-family:'Fraunces', serif; font-weight:600; font-size:1.1rem; color:var(--wine-deep); white-space:nowrap; }
+  .brand-sub{ font-size:0.64rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); font-weight:700; }
+
+  .nav-links{ display:flex; align-items:center; gap:26px; }
+  .nav-links a{
+    font-weight:600; font-size:0.9rem; color:var(--ink-soft);
+    position:relative; padding:4px 0; white-space:nowrap;
+  }
+  .nav-links a::after{
+    content:""; position:absolute; left:0; bottom:-2px; width:0; height:2px;
+    background:var(--gold); transition:width .2s ease;
+  }
+  .nav-links a:hover::after, .nav-links a:focus-visible::after{ width:100%; }
+  .nav-cta{ display:flex; align-items:center; gap:14px; }
+
+  .nav-toggle{
+    display:none; background:none; border:none; cursor:pointer; padding:6px;
+  }
+  .nav-toggle span{ display:block; width:24px; height:2px; background:var(--wine-deep); margin:5px 0; transition:transform .2s ease, opacity .2s ease; }
+
+  @media (max-width: 1000px){
+    .nav-links{
+      position:absolute; top:100%; left:0; right:0;
+      background:var(--paper);
+      flex-direction:column; align-items:flex-start;
+      padding:22px 28px 26px;
+      border-bottom:1px solid var(--line);
+      display:none;
+      gap:18px;
+    }
+    .nav-links.open{ display:flex; }
+    .nav-toggle{ display:block; }
+  }
+
+  @media (max-width: 420px){
+    .brand-sub{ display:none; }
+    .brand-logo{ height:36px; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .container{
+    display:grid;
+    grid-template-columns:1.05fr 0.85fr;
+    gap:50px;
+    align-items:center;
+    padding-top:44px;
+    padding-bottom:40px;
+  }
+  .hero h1{
+    font-size:clamp(2.3rem, 4.2vw, 3.5rem);
+    line-height:1.08;
+    margin:18px 0 22px;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--wine);
+  }
+  .hero p.lede{
+    font-size:1.06rem;
+    color:var(--ink-soft);
+    max-width:46ch;
+    margin-bottom:30px;
+  }
+  .hero-ctas{ display:flex; gap:16px; flex-wrap:wrap; }
+  .hero-visual{
+    position:relative;
+    aspect-ratio:1/1;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .hero-visual .wreath-bg{
+    position:absolute; inset:6%;
+    background:var(--blush);
+    border-radius:50%;
+  }
+  #wreath-svg{ position:relative; width:100%; height:100%; }
+  #wreath-svg .ring{ animation: spin 90s linear infinite; transform-origin:50% 50%; }
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+
+  .hero-photo-frame{
+    position:absolute; inset:15%;
+    border-radius:50%;
+    overflow:hidden;
+    border:3px solid var(--paper);
+    box-shadow:0 24px 50px -18px rgba(74,18,36,0.45);
+  }
+  .hero-photo-frame img{ width:100%; height:100%; object-fit:cover; object-position:top center; }
+
+  .trust-strip{
+    background:var(--wine-deep);
+    color:var(--ivory);
+  }
+  .trust-strip .container{
+    display:flex; flex-wrap:wrap; gap:14px;
+    justify-content:space-between;
+    padding:22px 28px;
+  }
+  .trust-item{
+    display:flex; align-items:center; gap:10px;
+    font-size:0.92rem; font-weight:600;
+    color:var(--ivory);
+    flex:1 1 220px;
+  }
+  .trust-item svg{ width:20px; height:20px; flex-shrink:0; color:var(--gold-soft); }
+
+  /* ---------- Divider ---------- */
+  .garland-divider{ width:100%; height:32px; margin:0 auto; opacity:0.9; }
+  .section{ padding:56px 0; }
+  .section-alt{ background:var(--paper); }
+  .section-head{ text-align:center; max-width:640px; margin:0 auto 38px; }
+  .section-head h2{ font-size:clamp(1.7rem, 3vw, 2.35rem); margin-top:14px; line-height:1.2; }
+  .section-head p{ color:var(--ink-soft); margin-top:14px; }
+
+  /* ---------- Services ---------- */
+  .services-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:22px;
+  }
+  .service-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+    transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+  }
+  .service-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow); border-color:transparent; }
+  .service-photo{ aspect-ratio:4/3; overflow:hidden; }
+  .service-photo img{ width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+  .service-card:hover .service-photo img{ transform:scale(1.06); }
+  .service-card-body{ padding:22px 22px 26px; }
+  .service-card h3{ font-size:1.14rem; margin-bottom:8px; }
+  .service-card p{ color:var(--ink-soft); font-size:0.92rem; margin:0; }
+
+  @media (max-width: 900px){
+    .services-grid{ grid-template-columns:repeat(2, 1fr); }
+  }
+  @media (max-width: 500px){
+    .services-grid{ grid-template-columns:1fr; }
+  }
+
+  /* ---------- Gallery ---------- */
+  .gallery-tabs{
+    display:flex; justify-content:center; gap:10px;
+    margin-bottom:36px; flex-wrap:wrap;
+  }
+  .gtab{
+    background:transparent;
+    border:1.5px solid var(--line);
+    color:var(--ink-soft);
+    padding:11px 22px;
+    border-radius:100px;
+    font-weight:700;
+    font-size:0.86rem;
+    cursor:pointer;
+    transition:all .2s ease;
+  }
+  .gtab:hover{ border-color:var(--wine); color:var(--wine-deep); }
+  .gtab.active{ background:var(--wine); border-color:var(--wine); color:var(--paper); }
+  .gtab:focus-visible{ outline:3px solid var(--gold-soft); outline-offset:2px; }
+
+  .gallery-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+  }
+  .gallery-grid.gallery-grid-fixed{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+  }
+  .gallery-grid[hidden]{
+    display:none !important;
+  }
+  .g-item{
+    flex:1 1 240px;
+    height:260px;
+    border-radius:14px;
+    overflow:hidden;
+    cursor:zoom-in;
+    position:relative;
+    box-shadow:0 1px 2px rgba(43,24,16,0.06);
+  }
+  .g-item img{
+    width:100%; height:100%; display:block;
+    object-fit:cover;
+    transition:transform .5s ease, filter .5s ease;
+  }
+  .g-item::after{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(to top, rgba(74,18,36,0.35), transparent 40%);
+    opacity:0; transition:opacity .3s ease;
+    pointer-events:none;
+  }
+  .g-item:hover img{ transform:scale(1.06); }
+  .g-item:hover::after{ opacity:1; }
+
+  @media (max-width:900px){
+    .gallery-grid.gallery-grid-fixed{ grid-template-columns:repeat(2, 1fr); }
+  }
+  @media (max-width:700px){
+    .g-item{ height:200px; flex-basis:150px; }
+    .gallery-grid{ gap:10px; }
+    .gallery-grid.gallery-grid-fixed{ grid-template-columns:repeat(2, 1fr); gap:10px; }
+  }
+  @media (max-width:460px){
+    .gallery-grid.gallery-grid-fixed{ grid-template-columns:1fr; }
+  }
+
+  .lightbox{
+    position:fixed; inset:0; z-index:100;
+    background:rgba(43,24,16,0.94);
+    display:none;
+    align-items:center; justify-content:center;
+    padding:40px;
+  }
+  .lightbox.open{ display:flex; }
+  .lightbox-stage{
+    position:relative;
+    display:flex; align-items:center; justify-content:center;
+    max-width:100%; max-height:100%;
+  }
+  .lightbox img{
+    max-width:100%; max-height:82vh;
+    border-radius:10px;
+    box-shadow:0 30px 60px rgba(0,0,0,0.5);
+  }
+  .lightbox-close{
+    position:absolute; top:24px; right:28px;
+    background:none; border:none;
+    color:var(--ivory);
+    font-size:2.4rem;
+    line-height:1;
+    cursor:pointer;
+    padding:6px 10px;
+  }
+  .lightbox-close:focus-visible{ outline:3px solid var(--gold-soft); }
+  .lightbox-nav{
+    position:absolute; top:50%; transform:translateY(-50%);
+    background:rgba(251,243,236,0.15);
+    border:1px solid rgba(251,243,236,0.4);
+    color:var(--ivory);
+    width:44px; height:44px;
+    border-radius:50%;
+    cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    transition:background .2s ease;
+  }
+  .lightbox-nav:hover{ background:rgba(251,243,236,0.28); }
+  .lightbox-nav:focus-visible{ outline:3px solid var(--gold-soft); }
+  .lightbox-prev{ left:-64px; }
+  .lightbox-next{ right:-64px; }
+  .lightbox-nav svg{ width:20px; height:20px; }
+  .lightbox-counter{
+    position:absolute; bottom:-34px; left:50%; transform:translateX(-50%);
+    color:rgba(251,243,236,0.8);
+    font-size:0.82rem; font-weight:600; letter-spacing:0.04em;
+  }
+  @media (max-width:800px){
+    .lightbox-prev{ left:6px; }
+    .lightbox-next{ right:6px; }
+    .lightbox{ padding:20px; }
+  }
+
+  /* ---------- Reviews ---------- */
+  .reviews-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:24px;
+  }
+  .review-card{
+    background:var(--ivory);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:30px;
+    display:flex; flex-direction:column; gap:16px;
+  }
+  .stars{ display:flex; gap:4px; }
+  .stars svg{ width:16px; height:16px; color:var(--gold); }
+  .review-quote{ font-family:'Fraunces', serif; font-style:italic; font-size:1.04rem; color:var(--ink); line-height:1.55; }
+  .review-quote .name-hl{ font-style:normal; font-weight:600; color:var(--wine); }
+  .review-author{ display:flex; align-items:center; gap:12px; margin-top:auto; }
+  .avatar{
+    width:38px; height:38px; border-radius:50%;
+    background:var(--wine); color:var(--ivory);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces', serif; font-weight:600; font-size:0.95rem;
+    flex-shrink:0;
+  }
+  .author-name{ font-weight:700; font-size:0.92rem; color:var(--ink); }
+  .author-tag{ font-size:0.78rem; color:var(--ink-soft); }
+
+  @media (max-width:800px){
+    .reviews-grid{ grid-template-columns:1fr; }
+  }
+
+  /* ---------- Founder ---------- */
+  .founder-grid{
+    display:grid;
+    grid-template-columns:0.62fr 1fr;
+    gap:56px;
+    align-items:center;
+  }
+  .founder-photo{
+    position:relative;
+    max-width:340px;
+  }
+  .founder-photo img{
+    width:100%;
+    aspect-ratio:3/3.6;
+    object-fit:cover;
+    border-radius:14px;
+    position:relative;
+    z-index:2;
+    box-shadow:0 24px 46px -18px rgba(74,18,36,0.4);
+  }
+  .founder-photo-accent{
+    position:absolute;
+    inset:16px -16px -16px 16px;
+    border:1.5px solid var(--gold);
+    border-radius:14px;
+    z-index:1;
+  }
+  .founder-copy .eyebrow{ margin-bottom:16px; }
+  .founder-copy h2{ font-size:clamp(1.8rem, 3vw, 2.5rem); margin-bottom:4px; }
+  .founder-lede{
+    font-family:'Manrope', sans-serif;
+    font-weight:700;
+    font-size:0.86rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin:0 0 22px;
+  }
+  .founder-copy p{ color:var(--ink-soft); margin:0 0 16px; max-width:56ch; }
+  .founder-copy p:last-child{ margin-bottom:0; }
+
+  @media (max-width:820px){
+    .founder-grid{ grid-template-columns:1fr; gap:36px; }
+    .founder-photo{ max-width:260px; margin:0 auto; }
+  }
+
+  /* ---------- Visit ---------- */
+  .visit-grid{
+    display:grid;
+    grid-template-columns:0.95fr 1.05fr;
+    gap:44px;
+    align-items:start;
+  }
+  .info-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:34px;
+  }
+  .info-row{ display:flex; gap:16px; margin-bottom:26px; }
+  .info-row:last-child{ margin-bottom:0; }
+  .info-row svg{ width:22px; height:22px; color:var(--wine); flex-shrink:0; margin-top:2px; }
+  .info-row h4{ font-family:'Fraunces', serif; font-size:1.02rem; color:var(--wine-deep); margin:0 0 4px; font-weight:600; }
+  .info-row p{ margin:0; color:var(--ink-soft); font-size:0.94rem; }
+
+  .hours-table{ width:100%; border-collapse:collapse; margin-top:4px; }
+  .hours-table td{ padding:4px 0; font-size:0.94rem; color:var(--ink-soft); }
+  .hours-table td:last-child{ text-align:right; font-weight:700; color:var(--ink); }
+
+  .contact-buttons{ display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+
+  .booking-card{
+    background:var(--wine-deep);
+    color:var(--ivory);
+    border-radius:var(--radius);
+    padding:34px;
+    height:100%;
+  }
+  .booking-title{ font-family:'Fraunces', serif; font-size:1.3rem; color:var(--ivory); margin:0 0 6px; }
+  .booking-sub{ color:rgba(251,243,236,0.75); font-size:0.9rem; margin:0 0 24px; }
+  .booking-label{
+    display:block; font-size:0.76rem; font-weight:700; letter-spacing:0.08em;
+    text-transform:uppercase; color:var(--gold-soft); margin-bottom:8px;
+  }
+  .booking-date{
+    width:100%;
+    background:rgba(251,243,236,0.08);
+    border:1.5px solid rgba(251,243,236,0.25);
+    color:var(--ivory);
+    border-radius:10px;
+    padding:12px 14px;
+    font-family:'Manrope', sans-serif;
+    font-size:0.94rem;
+    margin-bottom:22px;
+    color-scheme:dark;
+  }
+  .booking-date:focus-visible{ outline:2px solid var(--gold-soft); }
+  .slot-options{ display:flex; gap:10px; margin-bottom:26px; flex-wrap:wrap; }
+  .slot-btn{
+    flex:1 1 100px;
+    display:flex; flex-direction:column; align-items:center; gap:6px;
+    background:rgba(251,243,236,0.06);
+    border:1.5px solid rgba(251,243,236,0.25);
+    color:rgba(251,243,236,0.85);
+    border-radius:12px;
+    padding:14px 10px;
+    font-size:0.82rem;
+    font-weight:700;
+    cursor:pointer;
+    transition:all .2s ease;
+  }
+  .slot-btn svg{ width:20px; height:20px; }
+  .slot-btn:hover{ border-color:var(--gold-soft); }
+  .slot-btn.active{ background:var(--gold); border-color:var(--gold); color:var(--wine-deep); }
+  .slot-btn:focus-visible{ outline:2px solid var(--gold-soft); outline-offset:2px; }
+  .booking-cta{ width:100%; }
+  .booking-hint{ text-align:center; font-size:0.8rem; color:rgba(251,243,236,0.6); margin:14px 0 0; }
+
+  @media (max-width:900px){
+    .visit-grid{ grid-template-columns:1fr; }
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--wine-deep);
+    color:var(--ivory);
+    padding:56px 0 28px;
+  }
+  .footer-top{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:32px;
+    padding-bottom:34px;
+    border-bottom:1px solid rgba(251,243,236,0.14);
+    margin-bottom:22px;
+  }
+  .footer-brand{ display:flex; align-items:center; gap:14px; }
+  .footer-logo{ height:52px; width:auto; }
+  .footer-brand .brand-name{ color:var(--ivory); }
+  .footer-brand .brand-sub{ color:var(--gold-soft); }
+  .footer-links{ display:flex; gap:40px; flex-wrap:wrap; }
+  .footer-col h5{ font-size:0.76rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold-soft); margin:0 0 12px; font-weight:700; }
+  .footer-col a, .footer-col p{ display:block; font-size:0.9rem; color:rgba(251,243,236,0.82); margin-bottom:8px; }
+  .footer-col a:hover{ color:var(--ivory); text-decoration:underline; }
+  .footer-bottom{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:0.82rem; color:rgba(251,243,236,0.6); }
+
+  /* ---------- Floating WhatsApp ---------- */
+  .float-wa{
+    position:fixed; bottom:22px; right:22px; z-index:60;
+    width:58px; height:58px; border-radius:50%;
+    background:var(--wine);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 26px -6px rgba(74,18,36,0.55);
+    transition:transform .2s ease;
+  }
+  .float-wa:hover{ transform:scale(1.08); }
+  .float-wa svg{ width:27px; height:27px; color:var(--ivory); }
+
+  /* ---------- Reveal ---------- */
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  ::selection{ background:var(--blush); color:var(--wine-deep); }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header>
+  <nav class="nav">
+    <div class="brand">
+      <img class="brand-logo" src="images/logo.png" alt="Smitha Beauty Salon logo">
+      <div class="brand-text">
+        <span class="brand-name">Smitha Beauty Salon</span>
+        <span class="brand-sub">Ladies Salon · Kodialbail</span>
+      </div>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#founder">Meet the Artist</a>
+      <a href="#visit">Contact Us</a>
+    </div>
+
+    <div class="nav-cta">
+      <a class="btn btn-primary btn-sm" href="https://wa.me/917348904004" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container">
+    <div>
+      <span class="eyebrow">Kodialbail · Mangaluru</span>
+      <h1>Beauty, cared for<br>the way <em>family</em> does it.</h1>
+      <p class="lede">From bridal makeup to everyday hair and skin care, Smitha Beauty Salon has looked after Mangaluru's women for close to a decade — spotless spaces, experienced hands, and a team that remembers your name.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="https://wa.me/917348904004" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.33 4.95L2 22l5.28-1.38a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0 0 12.04 2m0 1.67c2.24 0 4.35.87 5.94 2.46a8.3 8.3 0 0 1 2.45 5.78c0 4.57-3.72 8.28-8.35 8.28a8.3 8.3 0 0 1-4.19-1.13l-.3-.18-3.13.82.84-3.05-.2-.31a8.24 8.24 0 0 1-1.27-4.4c0-4.57 3.72-8.27 8.21-8.27m4.29 5.83c-.24-.5-.48-.51-.7-.52h-.6c-.2 0-.53.08-.81.38-.28.3-1.06 1.04-1.06 2.53s1.08 2.93 1.23 3.13c.15.2 2.1 3.2 5.08 4.36.71.28 1.26.44 1.69.56.71.2 1.36.17 1.87.1.57-.08 1.75-.71 2-1.4.24-.68.24-1.27.17-1.4-.07-.13-.27-.2-.56-.35-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.08-.3-.15-1.24-.46-2.37-1.46-.87-.78-1.47-1.74-1.64-2.03-.17-.3-.02-.46.13-.6.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.65-.94-2.26" /></svg>
+          Book on WhatsApp
+        </a>
+        <a class="btn btn-ghost" href="tel:08242494004">Call the Salon</a>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="wreath-bg"></div>
+      <svg id="wreath-svg" viewBox="0 0 400 400" aria-hidden="true">
+        <g class="ring" id="wreathRing"></g>
+      </svg>
+      <div class="hero-photo-frame">
+        <img src="images/b5.jpg" alt="Bridal makeup by Smitha Beauty Salon">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="container">
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l2.5 2.5M16.5 16.5 19 19M19 5l-2.5 2.5M7.5 16.5 5 19"/></svg>
+      Trusted by Mangaluru families for 10+ years
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 8v4l3 3M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+      Open 7 days, 9:30am–7pm
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
+      Hair · Facials · Nails · Bridal Makeup
+    </div>
+  </div>
+</div>
+
+<svg class="garland-divider" viewBox="0 0 1200 44" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+  <path id="dividerPath" d="M0 22 Q 150 4, 300 22 T 600 22 T 900 22 T 1200 22" fill="none" stroke="#B8862E" stroke-width="1" opacity="0.55"/>
+  <g id="dividerFlowers"></g>
+</svg>
+
+<!-- ============ SERVICES ============ -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center;">Our Specialties</span>
+      <h2>Four services, one unhurried standard of care</h2>
+      <p>Every treatment is done the same way Smitha trains her team to do it — thoroughly, and without cutting corners.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-photo"><img src="images/haircare.jpg" alt="Hair styling service at Smitha Beauty Salon" loading="lazy"></div>
+        <div class="service-card-body">
+          <h3>Hair Services</h3>
+          <p>Cuts, colour, styling and treatments suited to your hair type and the look you're after.</p>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-photo"><img src="images/facial.jpg" alt="Facial treatment at Smitha Beauty Salon" loading="lazy"></div>
+        <div class="service-card-body">
+          <h3>Facials</h3>
+          <p>Deep-cleansing and glow facials, chosen for your skin rather than a fixed menu.</p>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-photo"><img src="images/nailcare.jpg" alt="Nail care service at Smitha Beauty Salon" loading="lazy"></div>
+        <div class="service-card-body">
+          <h3>Nail Care</h3>
+          <p>Manicures and pedicures, from a clean classic set to detailed nail art.</p>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-photo"><img src="images/makeup.jpg" alt="Bridal and party makeup at Smitha Beauty Salon" loading="lazy"></div>
+        <div class="service-card-body">
+          <h3>Bridal &amp; Party Makeup</h3>
+          <p>Full bridal looks and party makeup, built around your features on the day that matters.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="garland-divider" viewBox="0 0 1200 44" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+  <path d="M0 22 Q 150 40, 300 22 T 600 22 T 900 22 T 1200 22" fill="none" stroke="#445939" stroke-width="1" opacity="0.4"/>
+  <g id="dividerFlowers2"></g>
+</svg>
+
+<!-- ============ GALLERY ============ -->
+<section class="section" id="gallery">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center;">Our Work</span>
+      <h2>A closer look at the finished look</h2>
+      <p>Bridal transformations and everyday hair artistry, straight from the salon floor.</p>
+    </div>
+
+    <div class="gallery-tabs reveal" role="tablist" aria-label="Gallery categories">
+      <button class="gtab active" data-target="gal-bridal" role="tab" aria-selected="true">Bridal &amp; Party Makeup</button>
+      <button class="gtab" data-target="gal-hair" role="tab" aria-selected="false">Hair Artistry</button>
+    </div>
+
+    <div class="gallery-grid" id="gal-bridal">
+      <div class="g-item reveal"><img src="images/b1.jpg" alt="Bridal makeup with jasmine flower veil" loading="lazy"></div>
+      <div class="g-item reveal"><img src="images/b2.jpg" alt="Bridal makeup with jasmine hair styling" loading="lazy"></div>
+      <div class="g-item reveal"><img src="images/b3.jpg" alt="Party makeup in green silk saree" loading="lazy"></div>
+      <div class="g-item reveal"><img src="images/b4.jpg" alt="Bridal makeup with maang tikka" loading="lazy"></div>
+      <div class="g-item reveal"><img src="images/b5.jpg" alt="Bridal makeup with gold jewellery" loading="lazy"></div>
+      <div class="g-item reveal"><img src="images/b6.jpg" alt="Bridal look with floral braid" loading="lazy"></div>
+      <div class="g-item reveal"><img src="images/b7.jpg" alt="Bridal makeup and gold jewellery styling" loading="lazy"></div>
+      <div class="g-item reveal"><img src="images/b8.jpg" alt="Party makeup in yellow saree" loading="lazy"></div>
+    </div>
+
+    <div class="gallery-grid gallery-grid-fixed" id="gal-hair" hidden>
+      <div class="g-item reveal"><img src="images/h1.jpg" alt="Balayage highlights on long hair" loading="lazy"></div>
+      <div class="g-item reveal"><img src="images/h2.jpg" alt="Balayage waves on long hair" loading="lazy"></div>
+      <div class="g-item reveal"><img src="images/h3.jpg" alt="Sleek straightening finish" loading="lazy"></div>
+      <div class="g-item reveal"><img src="images/h4.jpg" alt="Blonde balayage curls" loading="lazy"></div>
+      <div class="g-item reveal"><img src="images/h5.jpg" alt="Voluminous curls" loading="lazy"></div>
+      <div class="g-item reveal"><img src="images/h6.jpg" alt="Red balayage colour transformation" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+  <div class="lightbox-stage">
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <img id="lightboxImg" src="" alt="">
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+  </div>
+</div>
+
+<svg class="garland-divider" viewBox="0 0 1200 44" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+  <path d="M0 22 Q 150 4, 300 22 T 600 22 T 900 22 T 1200 22" fill="none" stroke="#6B1930" stroke-width="1" opacity="0.5"/>
+  <g id="dividerFlowers4"></g>
+</svg>
+
+<!-- ============ REVIEWS ============ -->
+<section class="section section-alt" id="reviews">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center;">In Their Words</span>
+      <h2>What Mangaluru says after their visit</h2>
+      <p>Real notes from clients, and the stylists they came back to see.</p>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="stars">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 12.6 7l6 .9-4.3 4.2 1 6-5.3-2.8L4.7 18l1-6L1.4 7.9l6-.9Z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 12.6 7l6 .9-4.3 4.2 1 6-5.3-2.8L4.7 18l1-6L1.4 7.9l6-.9Z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 12.6 7l6 .9-4.3 4.2 1 6-5.3-2.8L4.7 18l1-6L1.4 7.9l6-.9Z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 12.6 7l6 .9-4.3 4.2 1 6-5.3-2.8L4.7 18l1-6L1.4 7.9l6-.9Z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 12.6 7l6 .9-4.3 4.2 1 6-5.3-2.8L4.7 18l1-6L1.4 7.9l6-.9Z"/></svg>
+        </div>
+        <p class="review-quote">"I came in for eyebrows and waxing with <span class="name-hl">Aishwarya</span>, and she was fantastic — attentive, quick, and completely professional. The salon itself is beautiful, spotless, and welcoming."</p>
+        <div class="review-author">
+          <div class="avatar">NP</div>
+          <div>
+            <div class="author-name">Neha Prabhu</div>
+            <div class="author-tag">Eyebrows &amp; Waxing</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card reveal">
+        <div class="stars">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 12.6 7l6 .9-4.3 4.2 1 6-5.3-2.8L4.7 18l1-6L1.4 7.9l6-.9Z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 12.6 7l6 .9-4.3 4.2 1 6-5.3-2.8L4.7 18l1-6L1.4 7.9l6-.9Z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 12.6 7l6 .9-4.3 4.2 1 6-5.3-2.8L4.7 18l1-6L1.4 7.9l6-.9Z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 12.6 7l6 .9-4.3 4.2 1 6-5.3-2.8L4.7 18l1-6L1.4 7.9l6-.9Z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 12.6 7l6 .9-4.3 4.2 1 6-5.3-2.8L4.7 18l1-6L1.4 7.9l6-.9Z"/></svg>
+        </div>
+        <p class="review-quote">"Warmly greeted by the receptionist, who guided me through the options. <span class="name-hl">Pavithra</span>, <span class="name-hl">Shwetha</span> and <span class="name-hl">Hithakshi</span> were excellent — every penny was worth it. A must-visit place."</p>
+        <div class="review-author">
+          <div class="avatar">SD</div>
+          <div>
+            <div class="author-name">Sharin Dsilva</div>
+            <div class="author-tag">Salon Visit</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card reveal">
+        <div class="stars">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 12.6 7l6 .9-4.3 4.2 1 6-5.3-2.8L4.7 18l1-6L1.4 7.9l6-.9Z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 12.6 7l6 .9-4.3 4.2 1 6-5.3-2.8L4.7 18l1-6L1.4 7.9l6-.9Z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 12.6 7l6 .9-4.3 4.2 1 6-5.3-2.8L4.7 18l1-6L1.4 7.9l6-.9Z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 12.6 7l6 .9-4.3 4.2 1 6-5.3-2.8L4.7 18l1-6L1.4 7.9l6-.9Z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 12.6 7l6 .9-4.3 4.2 1 6-5.3-2.8L4.7 18l1-6L1.4 7.9l6-.9Z"/></svg>
+        </div>
+        <p class="review-quote">"Very polite and efficient staff, highly experienced across all services. <span class="name-hl">Bhavya</span> is one of my favourites, and <span class="name-hl">Bharathi</span> and <span class="name-hl">Chandrika</span> are also excellent. We'll definitely keep coming back."</p>
+        <div class="review-author">
+          <div class="avatar">RR</div>
+          <div>
+            <div class="author-name">Renuka D. Rao</div>
+            <div class="author-tag">Regular Client</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card reveal">
+        <div class="stars">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 12.6 7l6 .9-4.3 4.2 1 6-5.3-2.8L4.7 18l1-6L1.4 7.9l6-.9Z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 12.6 7l6 .9-4.3 4.2 1 6-5.3-2.8L4.7 18l1-6L1.4 7.9l6-.9Z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 12.6 7l6 .9-4.3 4.2 1 6-5.3-2.8L4.7 18l1-6L1.4 7.9l6-.9Z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 12.6 7l6 .9-4.3 4.2 1 6-5.3-2.8L4.7 18l1-6L1.4 7.9l6-.9Z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 12.6 7l6 .9-4.3 4.2 1 6-5.3-2.8L4.7 18l1-6L1.4 7.9l6-.9Z"/></svg>
+        </div>
+        <p class="review-quote">"My family has visited for nearly ten years. From hair to facials, manicures and pedicures, the quality never disappoints. All the staff are excellent, especially <span class="name-hl">Chaithra</span>!"</p>
+        <div class="review-author">
+          <div class="avatar">GS</div>
+          <div>
+            <div class="author-name">Gayathri Shenoy</div>
+            <div class="author-tag">10-Year Client</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="garland-divider" viewBox="0 0 1200 44" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+  <path d="M0 22 Q 150 4, 300 22 T 600 22 T 900 22 T 1200 22" fill="none" stroke="#B8862E" stroke-width="1" opacity="0.55"/>
+  <g id="dividerFlowers3"></g>
+</svg>
+
+<!-- ============ FOUNDER ============ -->
+<section class="section" id="founder">
+  <div class="container">
+    <div class="founder-grid">
+      <div class="founder-photo reveal">
+        <img src="images/smitha-hegde.jpg" alt="Smitha Hegde, founder of Smitha Beauty Salon">
+        <div class="founder-photo-accent" aria-hidden="true"></div>
+      </div>
+      <div class="founder-copy reveal">
+        <span class="eyebrow">Meet The Artist</span>
+        <h2>Smitha Hegde</h2>
+        <p class="founder-lede">Founder, Smitha Beauty Salon</p>
+        <p>Smitha Hegde, the founder of Smitha Beauty Salon, is dedicated to creating a welcoming space where clients feel comfortable, cared for, and confident. With a strong focus on quality, professionalism, and attention to detail, she personally maintains high standards and invests in training her team to deliver consistently excellent service.</p>
+        <p>Her commitment to clients has helped build lasting relationships, with families returning to the salon for years. For Smitha, beauty is not just about the service — it's about making every visit a positive and enjoyable experience.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="garland-divider" viewBox="0 0 1200 44" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+  <path d="M0 22 Q 150 40, 300 22 T 600 22 T 900 22 T 1200 22" fill="none" stroke="#445939" stroke-width="1" opacity="0.4"/>
+  <g id="dividerFlowers5"></g>
+</svg>
+
+<!-- ============ VISIT ============ -->
+<section class="section" id="visit">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center;">Find Us</span>
+      <h2>Visit the salon in Kodialbail</h2>
+      <p>Walk-ins welcome — though a WhatsApp message ahead of time holds your slot.</p>
+    </div>
+
+    <div class="visit-grid">
+      <div class="info-card reveal">
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+          <div>
+            <h4>Address</h4>
+            <p>Pio Mall, Bejai Church Road, Kodialbail, Mangaluru, Karnataka 575003</p>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 8v4l3 3M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+          <div>
+            <h4>Hours</h4>
+            <table class="hours-table">
+              <tr><td>Monday – Saturday</td><td>9:30 am – 7:00 pm</td></tr>
+              <tr><td>Sunday</td><td>10:00 am – 6:00 pm</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.99.36 1.96.68 2.9a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.18-1.25a2 2 0 0 1 2.11-.45c.94.32 1.91.55 2.9.68A2 2 0 0 1 22 16.92Z"/></svg>
+          <div>
+            <h4>Contact</h4>
+            <p>WhatsApp: 73489 04004</p>
+            <p>Salon Line: 0824 249 4004</p>
+          </div>
+        </div>
+
+        <div class="contact-buttons">
+          <a class="btn btn-primary btn-sm" href="https://wa.me/917348904004" target="_blank" rel="noopener">WhatsApp Us</a>
+          <a class="btn btn-ghost btn-sm" href="https://maps.app.goo.gl/HLQapLxQbEL2KZUJ6" target="_blank" rel="noopener">Get Directions</a>
+          <a class="btn btn-ghost btn-sm" href="https://www.instagram.com/smithabeautysalon/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+
+      <div class="booking-card reveal">
+        <h4 class="booking-title">Book on WhatsApp</h4>
+        <p class="booking-sub">Pick a date and a slot — we'll open WhatsApp with your details filled in.</p>
+
+        <label class="booking-label" for="bookDate">Preferred date</label>
+        <input type="date" id="bookDate" class="booking-date">
+
+        <span class="booking-label">Preferred time</span>
+        <div class="slot-options" id="slotOptions">
+          <button type="button" class="slot-btn" data-slot="Morning (9:30am–12:30pm)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2M12 19.5v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M2.5 12h2M19.5 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
+            Morning
+          </button>
+          <button type="button" class="slot-btn" data-slot="Afternoon (12:30pm–4pm)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="14" r="5"/><path d="M12 3v2.2M4.9 8.9l1.4 1M19.1 8.9l-1.4 1M2.5 19.5h19"/></svg>
+            Afternoon
+          </button>
+          <button type="button" class="slot-btn" data-slot="Evening (4pm–7pm)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 15a8 8 0 0 1 16 0M2.5 19.5h19M6 15a6 6 0 0 1 12 0"/></svg>
+            Evening
+          </button>
+        </div>
+
+        <a class="btn btn-primary booking-cta" id="bookingCta" href="https://wa.me/917348904004" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.33 4.95L2 22l5.28-1.38a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0 0 12.04 2m0 1.67c2.24 0 4.35.87 5.94 2.46a8.3 8.3 0 0 1 2.45 5.78c0 4.57-3.72 8.28-8.35 8.28a8.3 8.3 0 0 1-4.19-1.13l-.3-.18-3.13.82.84-3.05-.2-.31a8.24 8.24 0 0 1-1.27-4.4c0-4.57 3.72-8.27 8.21-8.27m4.29 5.83c-.24-.5-.48-.51-.7-.52h-.6c-.2 0-.53.08-.81.38-.28.3-1.06 1.04-1.06 2.53s1.08 2.93 1.23 3.13c.15.2 2.1 3.2 5.08 4.36.71.28 1.26.44 1.69.56.71.2 1.36.17 1.87.1.57-.08 1.75-.71 2-1.4.24-.68.24-1.27.17-1.4-.07-.13-.27-.2-.56-.35-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.08-.3-.15-1.24-.46-2.37-1.46-.87-.78-1.47-1.74-1.64-2.03-.17-.3-.02-.46.13-.6.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.65-.94-2.26" /></svg>
+          Confirm on WhatsApp
+        </a>
+        <p class="booking-hint" id="bookingHint">Choose a date and time, then confirm.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="images/logo-ivory.png" alt="Smitha Beauty Salon logo" class="footer-logo">
+        <div class="brand-text">
+          <span class="brand-sub">Ladies Salon · Kodialbail, Mangaluru</span>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Salon</h5>
+          <a href="#services">Services</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#visit">Location</a>
+        </div>
+        <div class="footer-col">
+          <h5>Reach Us</h5>
+          <a href="https://wa.me/917348904004" target="_blank" rel="noopener">WhatsApp: 73489 04004</a>
+          <a href="tel:08242494004">Call: 0824 249 4004</a>
+          <a href="https://www.instagram.com/smithabeautysalon/" target="_blank" rel="noopener">@smithabeautysalon</a>
+        </div>
+        <div class="footer-col">
+          <h5>Hours</h5>
+          <p>Mon–Sat, 9:30am–7pm</p>
+          <p>Sunday, 10am–6pm</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>Pio Mall, Bejai Church Road, Kodialbail, Mangaluru, Karnataka 575003</span>
+      <span id="year"></span>
+    </div>
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/917348904004" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.33 4.95L2 22l5.28-1.38a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0 0 12.04 2m0 1.67c2.24 0 4.35.87 5.94 2.46a8.3 8.3 0 0 1 2.45 5.78c0 4.57-3.72 8.28-8.35 8.28a8.3 8.3 0 0 1-4.19-1.13l-.3-.18-3.13.82.84-3.05-.2-.31a8.24 8.24 0 0 1-1.27-4.4c0-4.57 3.72-8.27 8.21-8.27m4.29 5.83c-.24-.5-.48-.51-.7-.52h-.6c-.2 0-.53.08-.81.38-.28.3-1.06 1.04-1.06 2.53s1.08 2.93 1.23 3.13c.15.2 2.1 3.2 5.08 4.36.71.28 1.26.44 1.69.56.71.2 1.36.17 1.87.1.57-.08 1.75-.71 2-1.4.24-.68.24-1.27.17-1.4-.07-.13-.27-.2-.56-.35-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.08-.3-.15-1.24-.46-2.37-1.46-.87-.78-1.47-1.74-1.64-2.03-.17-.3-.02-.46.13-.6.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.65-.94-2.26" /></svg>
+</a>
+
+<script>
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', false);
+  }));
+
+  // Footer year
+  document.getElementById('year').textContent = '© ' + new Date().getFullYear() + ' Smitha Beauty Salon';
+
+  // Jasmine flower generator
+  function flowerGroup(cx, cy, r, color){
+    const petals = 5;
+    let inner = `<circle cx="${cx}" cy="${cy}" r="${r*0.42}" fill="${color}" opacity="0.9"/>`;
+    for(let i=0;i<petals;i++){
+      const a = (Math.PI*2/petals)*i;
+      const px = cx + Math.cos(a)*r*0.8;
+      const py = cy + Math.sin(a)*r*0.8;
+      inner += `<circle cx="${px.toFixed(2)}" cy="${py.toFixed(2)}" r="${(r*0.5).toFixed(2)}" fill="${color}" opacity="0.85"/>`;
+    }
+    return `<g>${inner}</g>`;
+  }
+
+  // Hero wreath
+  (function buildWreath(){
+    const ring = document.getElementById('wreathRing');
+    if(!ring) return;
+    const count = 16;
+    const radius = 150;
+    const colors = ['#B8862E', '#6B1930'];
+    let html = '';
+    for(let i=0;i<count;i++){
+      const a = (Math.PI*2/count)*i;
+      const cx = 200 + Math.cos(a)*radius;
+      const cy = 200 + Math.sin(a)*radius;
+      html += flowerGroup(cx, cy, 9, colors[i % 2]);
+    }
+    ring.innerHTML = html;
+  })();
+
+  // Divider flowers along the path
+  function buildDivider(id, color){
+    const g = document.getElementById(id);
+    if(!g) return;
+    const points = [40,140,240,340,440,540,640,740,840,940,1040,1140];
+    let html = '';
+    points.forEach((x,i)=>{
+      const y = 22 + Math.sin(i*0.9)*14;
+      html += flowerGroup(x, y, 5.5, color);
+    });
+    g.innerHTML = html;
+  }
+  buildDivider('dividerFlowers', '#B8862E');
+  buildDivider('dividerFlowers2', '#445939');
+  buildDivider('dividerFlowers3', '#6B1930');
+  buildDivider('dividerFlowers4', '#B8862E');
+  buildDivider('dividerFlowers5', '#445939');
+
+  // Gallery tabs
+  const gtabs = document.querySelectorAll('.gtab');
+  const galBridal = document.getElementById('gal-bridal');
+  const galHair = document.getElementById('gal-hair');
+  gtabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      gtabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected','true');
+      const target = tab.getAttribute('data-target');
+      if(target === 'gal-bridal'){
+        galBridal.hidden = false; galHair.hidden = true;
+      } else {
+        galHair.hidden = false; galBridal.hidden = true;
+        galHair.querySelectorAll('.g-item').forEach(el => el.classList.add('in'));
+      }
+    });
+  });
+
+  // Lightbox / slideshow
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxClose = document.getElementById('lightboxClose');
+  const lightboxPrev = document.getElementById('lightboxPrev');
+  const lightboxNext = document.getElementById('lightboxNext');
+  const lightboxCounter = document.getElementById('lightboxCounter');
+
+  let currentImages = [];
+  let currentIndex = 0;
+
+  function openLightboxAt(imagesList, index){
+    currentImages = imagesList;
+    currentIndex = index;
+    showLightboxImage();
+    lightbox.classList.add('open');
+  }
+  function showLightboxImage(){
+    const img = currentImages[currentIndex];
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightboxCounter.textContent = (currentIndex + 1) + ' / ' + currentImages.length;
+  }
+  function closeLightbox(){ lightbox.classList.remove('open'); lightboxImg.src=''; }
+  function showNext(){ currentIndex = (currentIndex + 1) % currentImages.length; showLightboxImage(); }
+  function showPrev(){ currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length; showLightboxImage(); }
+
+  function wireGallery(gridEl){
+    const imgs = Array.from(gridEl.querySelectorAll('.g-item img'));
+    imgs.forEach((img, i) => {
+      img.addEventListener('click', () => openLightboxAt(imgs, i));
+    });
+  }
+  wireGallery(galBridal);
+  wireGallery(galHair);
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightboxNext.addEventListener('click', showNext);
+  lightboxPrev.addEventListener('click', showPrev);
+  lightbox.addEventListener('click', (e) => { if(e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e) => {
+    if(!lightbox.classList.contains('open')) return;
+    if(e.key === 'Escape') closeLightbox();
+    if(e.key === 'ArrowRight') showNext();
+    if(e.key === 'ArrowLeft') showPrev();
+  });
+
+  // Swipe support for mobile
+  let touchStartX = 0;
+  lightbox.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].clientX;
+  }, { passive: true });
+  lightbox.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if(Math.abs(dx) > 40){
+      if(dx < 0) showNext(); else showPrev();
+    }
+  }, { passive: true });
+
+  // Booking widget
+  (function bookingWidget(){
+    const dateInput = document.getElementById('bookDate');
+    const slotButtons = document.querySelectorAll('.slot-btn');
+    const cta = document.getElementById('bookingCta');
+    const hint = document.getElementById('bookingHint');
+    if(!dateInput || !cta) return;
+
+    let selectedSlot = '';
+
+    const today = new Date();
+    const iso = today.toISOString().split('T')[0];
+    dateInput.min = iso;
+    dateInput.value = iso;
+
+    slotButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        slotButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedSlot = btn.getAttribute('data-slot');
+        updateLink();
+      });
+    });
+    dateInput.addEventListener('change', updateLink);
+
+    function formatDate(value){
+      if(!value) return '';
+      const d = new Date(value + 'T00:00:00');
+      return d.toLocaleDateString('en-IN', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
+    }
+
+    function updateLink(){
+      const dateText = formatDate(dateInput.value);
+      let message = "Hi Smitha Beauty Salon, I'd like to book an appointment";
+      if(dateText) message += ` on ${dateText}`;
+      if(selectedSlot) message += ` in the ${selectedSlot}`;
+      message += '.';
+      cta.href = 'https://wa.me/917348904004?text=' + encodeURIComponent(message);
+      if(dateText && selectedSlot){
+        hint.textContent = `${dateText} · ${selectedSlot.split(' (')[0]}`;
+      } else {
+        hint.textContent = 'Choose a date and time, then confirm.';
+      }
+    }
+    updateLink();
+  })();
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
